@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "outDir": "./lib",
+    "rootDir": "./src/ts",
+    "module": "commonjs",
+    "target": "es5",
+    "noImplicitAny": true,
+    "suppressImplicitAnyIndexErrors": true
+  },
+  "filesGlob": [
+    "src/ts/**/*.ts"
+  ],
+  "files": [
+    "src/ts/index.ts",
+    "src/ts/no-scroll/index.ts",
+    "src/ts/get-transitionend-name/index.ts"
+  ]
+}
