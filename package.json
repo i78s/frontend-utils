@@ -1,7 +1,7 @@
 {
-  "name": "frontend-utils",
-  "version": "1.0.0",
-  "description": "",
+  "name": "i78s.frontend-utils",
+  "version": "0.0.0",
+  "description": "クライアントサイド汎用ライブラリ集",
   "main": "index.js",
   "scripts": {
     "build": "$(npm bin)/tsc",
@@ -14,7 +14,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/i78s/frontend-utils/issues"
   },
