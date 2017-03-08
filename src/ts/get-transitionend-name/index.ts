@@ -1,5 +1,5 @@
 // IE10以上, Android4.4.2以上
-export function getTransitionEndName () {
+export function getTransitionEndName (): string {
   const el = document.createElement('div');
   const transitions = {
     'transition':'transitionend',
