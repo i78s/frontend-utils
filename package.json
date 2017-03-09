@@ -1,9 +1,10 @@
 {
   "name": "i78s.frontend-utils",
-  "version": "0.0.0",
+  "version": "0.0.4",
   "description": "クライアントサイド汎用ライブラリ集",
   "main": "index.js",
   "scripts": {
+    "prepublish": "$(npm bin)/tsc",
     "build": "$(npm bin)/tsc",
     "watch": "$(npm bin)/tsc --watch",
     "test": "npm run build && karma start"
