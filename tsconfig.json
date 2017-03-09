@@ -7,12 +7,14 @@
     "noImplicitAny": true,
     "suppressImplicitAnyIndexErrors": true
   },
-  "filesGlob": [
-    "src/ts/**/*.ts"
+  "include": [
+    "src/ts/**/*"
   ],
-  "files": [
-    "src/ts/index.ts",
-    "src/ts/no-scroll/index.ts",
-    "src/ts/get-transitionend-name/index.ts"
+  "exclude": [
+    "node_modules",
+    "**/*-spec.ts"
+  ],
+  "typeRoots": [
+    "node_modules/@types"
   ]
 }

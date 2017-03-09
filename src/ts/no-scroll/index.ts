@@ -9,11 +9,13 @@ let scrollTop = 0;
 export function fixScroll() {
   scrollTop = getScrollTop();
   $body.style.top = `-${scrollTop}px`;
-  $body.classList.add('js-no-scroll');
+  $body.style.position = 'fixed';
+  $body.style.width = '100%';
 }
 
-export function releaseScroll(top: number) {
-  $body.classList.remove('js-no-scroll');
-  $body.style.top = '0';
+export function releaseScroll(top?: number) {
+  $body.style.top = '0px';
+  $body.style.position = '';
+  $body.style.width = '';
   $body.scrollTop = $documentElement.scrollTop = top || scrollTop;
 }
