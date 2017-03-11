@@ -41,6 +41,22 @@ $tabs = document.querySelectorAll('.js-tab');
 $tabContents = document.querySelectorAll('.js-tab-content');
 ```
 
+```sass
+.js-tab {
+  &.is-active {
+    color: #f00;
+    border: #f00;
+  }
+}
+
+.js-tab-content {
+  display: none;
+  &.is-active {
+    display: block;
+  }
+}
+```
+
 ```html
 <ul>
   <li><a class="js-tab is-active" data-index="0" href="#">tab1</a></li>
