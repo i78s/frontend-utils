@@ -36,9 +36,9 @@ releaseScroll();  // スクロール固定を解除
 ```js
 import { Tab } from 'i78s.frontend-utils';
 
+const $tabs = document.querySelectorAll('.js-tab');
+const $tabContents = document.querySelectorAll('.js-tab-content');
 const tab = new Tab($tabs, $tabContents);
-$tabs = document.querySelectorAll('.js-tab');
-$tabContents = document.querySelectorAll('.js-tab-content');
 ```
 
 ```sass
@@ -68,4 +68,25 @@ $tabContents = document.querySelectorAll('.js-tab-content');
   <div class="js-tab-content">tab2 content</div>
   <div class="js-tab-content">tab3 content</div>
 </div>
+```
+
+## モーダルやドロワーメニューに使える汎用クラス
+
+
+```js
+import { Togglable } from 'i78s.frontend-utils';
+
+$drawer = document.querySelector('.drawer');
+const drawer = new Togglable($drawer);
+drawer.show();
+drawer.hide();
+```
+
+```sass
+.drawer {
+  transform: translateY(-100%);
+  &.is-active {
+    transform: translateY(0);
+  }
+}
 ```

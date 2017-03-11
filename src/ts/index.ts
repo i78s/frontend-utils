@@ -1,3 +1,4 @@
-export * from './no-scroll/index';
-export * from './get-transitionend-name/index';
-export * from './tab/index';
+export * from './no-scroll';
+export * from './get-transitionend-name';
+export * from './tab';
+export * from './togglable';
