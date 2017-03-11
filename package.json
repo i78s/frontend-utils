@@ -1,6 +1,6 @@
 {
   "name": "i78s.frontend-utils",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "クライアントサイド汎用ライブラリ集",
   "main": "index.js",
   "scripts": {
