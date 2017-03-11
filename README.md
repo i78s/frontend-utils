@@ -17,9 +17,7 @@ Android4.4.2が要件定義外なら不要
 import { transitionEndName } from 'i78s.frontend-utils';
 
 const $test = document.getElementById('test');
-$test.addEventListener(transitionEndName, () => {
-  assert(true);
-});
+$test.addEventListener(transitionEndName, () => {});
 ```
 
 ## スクロールの固定 / 解除
