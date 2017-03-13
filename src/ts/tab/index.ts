@@ -17,11 +17,12 @@ export default class Tab {
     this.tabs = tabs;
     this.contents = contents;
 
-    this.option = Object.assign({
+    this.option = {
       index: 0,
       activeClass: 'is-active',
-      onChange: () => {}
-    }, option);
+      onChange: () => {},
+      ...option
+    };
 
     this.onSelectHandler = (e: Event) => {
       e.preventDefault();

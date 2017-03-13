@@ -16,11 +16,12 @@ export default class Accordion {
 
   constructor(element: HTMLElement, option?: AccordionOption) {
 
-    this.option = Object.assign({
+    this.option = {
       triggerSelector: '.js-accordion-trigger',
       collapseSelector: '.js-accordion-collapse',
-      activeClass: 'is-active'
-    }, option);
+      activeClass: 'is-active',
+      ...option
+    };
 
     this.element = element;
     this.triggers = <NodeListOf<HTMLAnchorElement>>this.element.querySelectorAll(this.option.triggerSelector);

@@ -8,7 +8,7 @@ interface TogglableOption {
   onHide?(): void;
 }
 
-class Togglable {
+export default class Togglable {
 
   private element: HTMLDivElement;
   option: TogglableOption;
@@ -17,11 +17,12 @@ class Togglable {
 
   constructor(element: HTMLDivElement, option?: TogglableOption) {
     this.element = element;
-    this.option = Object.assign({
+    this.option = {
       toggleClassName: 'is-active',
       onShow: noop,
-      onHide: noop
-    }, option);
+      onHide: noop,
+      ...option
+    };
 
     this.onTransitionEnd = (e) => {
       e.preventDefault();
@@ -60,4 +61,3 @@ class Togglable {
   }
 }
 
-export default Togglable;
