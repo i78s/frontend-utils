@@ -52,7 +52,7 @@ export default class Accordion {
   }
 
   destroy() {
-    Array.from(this.triggers, (el: HTMLAnchorElement) => {
+    Array.prototype.forEach.call(this.triggers, (el: HTMLAnchorElement) => {
       el.removeEventListener('click', this.onClickHandler);
     });
   }

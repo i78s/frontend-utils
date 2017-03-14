@@ -33,7 +33,7 @@ export default class Tab {
   }
 
   init() {
-    Array.from(this.tabs, (tab: HTMLAnchorElement) => {
+    Array.prototype.forEach.call(this.tabs, (tab: HTMLAnchorElement) => {
       tab.addEventListener('click', this.onSelectHandler);
     });
 
@@ -41,11 +41,11 @@ export default class Tab {
   }
 
   select(index: number) {
-    Array.from(this.tabs, (tab: HTMLAnchorElement) => {
+    Array.prototype.forEach.call(this.tabs, (tab: HTMLAnchorElement) => {
       tab.classList.remove(this.option.activeClass);
     });
 
-    Array.from(this.contents, (content) => {
+    Array.prototype.forEach.call(this.contents, (content: HTMLDivElement) => {
       content.classList.remove(this.option.activeClass);
     });
     this.tabs[index].classList.add(this.option.activeClass);
@@ -55,7 +55,7 @@ export default class Tab {
   }
 
   destroy() {
-    Array.from(this.tabs, (tab: HTMLAnchorElement) => {
+    Array.prototype.forEach.call(this.tabs, (tab: HTMLAnchorElement) => {
       tab.removeEventListener('click', this.onSelectHandler);
     });
   }
