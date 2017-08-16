@@ -31,6 +31,14 @@ fixScroll();      // スクロールできなくする
 releaseScroll();  // スクロール固定を解除
 ```
 
+```sass
+.js-no-scroll {
+  position: fixed;
+  width: 100%;
+}
+```
+
+
 ## シンプルなタブUI
 
 ```js
