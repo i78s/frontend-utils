@@ -61,12 +61,12 @@ module.exports = function (config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['ChromeCanaryHeadless'], // PhantomJS
+    browsers: ['ChromeHeadless'], // PhantomJS
 
     // you can define custom flags
     customLaunchers: {
-      ChromeCanaryHeadless: {
-        base: 'ChromeCanary',
+      ChromeHeadless: {
+        base: 'Chrome',
         flags: [
           '-incognito',
           '--headless',
@@ -87,6 +87,12 @@ module.exports = function (config) {
     },
     webpackMiddleware: {
       noInfo: true
+    },
+
+    browserConsoleLogOptions: {
+      level: 'log',
+      format: '%b %T: %m',
+      terminal: true
     },
 
     client: {
