@@ -98,3 +98,26 @@ drawer.hide();
   }
 }
 ```
+
+## 画面内に要素が入ってきた時にclassNameを付与するクラス
+
+
+```js
+import { ScrollIntoView } from 'i78s.frontend-utils';
+
+const scrollIntoView = new ScrollIntoView('js-slidein');
+scrollIntoView.init();
+```
+
+```sass
+.js-slidein {
+  transform: translateY(40px);
+  opacity: 0;
+  transition: .3s ease-out;
+
+  &.is-show {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+```
