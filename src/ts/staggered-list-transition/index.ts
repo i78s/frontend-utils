@@ -109,7 +109,7 @@ export default class StaggeredListTransition {
   private isInScreen(target: HTMLDivElement): boolean {
     const offsetTop = target.offsetTop;
     const offsetBottom = offsetTop + target.clientHeight;
-    if (offsetTop > this.getOffsetBottom() || offsetBottom < this.getOffsetTop()) {
+    if (offsetTop >= this.getOffsetBottom() || offsetBottom <= this.getOffsetTop()) {
       return false;
     }
     return true;
