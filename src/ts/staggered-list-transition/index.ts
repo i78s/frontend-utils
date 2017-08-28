@@ -18,13 +18,14 @@ export default class StaggeredListTransition {
   private timer: RafInterval;
 
   constructor(className: string, option?: StaggeredListTransitionOption) {
-    this.option = Object.assign({
+    this.option = {
       delay: 80,
       duration: 400,
       showClass: 'is-show',
       hideClass: 'is-hide',
-      outClass: 'is-out'
-    }, option);
+      outClass: 'is-out',
+      ...option
+    };
 
     this.$elements = <HTMLCollectionOf<HTMLDivElement>>document.getElementsByClassName(className);
     this.timer = { id: 0 };
