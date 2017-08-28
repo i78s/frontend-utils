@@ -121,3 +121,67 @@ scrollIntoView.init();
   }
 }
 ```
+
+
+## 要素をスタッガリングリストトランジションさせるクラス
+
+
+```js
+import { StaggeredListTransition } from 'i78s.frontend-utils';
+
+const staggeredCardsTransition = new StaggeredListTransition('js-slidein');
+staggeredCardsTransition.show()
+  .then(() => { /* do something */ });
+
+staggeredCardsTransition.hide()
+  .then(() => { /* do something */ });
+```
+
+```sass
+.js-slidein {
+  transform: translateY(40px);
+  opacity: 0;
+  transition: .3s ease-out;
+
+  &.is-show {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  
+  &.is-hide {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  &.is-out {
+    opacity: 0;
+  }
+}
+```
+
+## requestAnimationFrame版のsetInterval
+
+
+```js
+import { rafInterval, rafClearInterval } from 'i78s.frontend-utils';
+
+let count = 0;
+let timer = rafInterval(() => {
+  count++;
+  /* do something */
+  if (count == 2) {
+    rafClearInterval(timer)
+  }
+}}, 100);
+```
+
+## requestAnimationFrame版のsetTimeout
+
+
+```js
+import { rafTimeout } from 'i78s.frontend-utils';
+
+rafTimeout(() => {
+  /* do something */
+}, 100);
+```
