@@ -17,10 +17,11 @@ export default class ScrollIntoView {
 
 
   constructor(className: string, option?: ScrollIntoViewOption) {
-    this.option = <ScrollIntoViewOption>Object.assign({
+    this.option = {
       switchClass: 'is-show',
-      offset: 0 // チェックする場所を調整するための値 （画面下の部分からずらす）
-    }, option);
+      offset: 0, // クラス付与対象の要素の範囲の閾値
+      ...option
+    };
 
     this.targets = <HTMLCollectionOf<ScrollIntoViewElement>>document.getElementsByClassName(className);
     this.offsetTops = [];
