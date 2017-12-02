@@ -2,9 +2,6 @@ var path = require("path");
 var nodeModulesPath = path.join(__dirname, 'node_modules');
 
 module.exports = {
-  entry: {
-    index: './src/ts/index-spec.ts'
-  },
   resolve: {
     extensions: ['.ts', '.js'],
     modules: [
