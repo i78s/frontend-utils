@@ -7,9 +7,9 @@ describe('staggered-list-transition',  () => {
 
   let staggeredListTransition: StaggeredListTransition;
   const className = 'js-slidein';
-  const $scroll = navigator.userAgent.indexOf('WebKit') < 0 ? document.documentElement : document.body;
+  const $scroll = 'scrollingElement' in document ? document.scrollingElement : document.body;
 
-  beforeEach(() => {
+    beforeEach(() => {
     const div = document.createElement('div');
     div.innerHTML = `
     <style>

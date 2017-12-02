@@ -5,7 +5,7 @@ import ScrollIntoView from './index';
 describe('scroll-into-view',  () => {
   let scrollIntoView: ScrollIntoView;
   const className = 'js-slidein';
-  const $scroll = navigator.userAgent.indexOf('WebKit') < 0 ? document.documentElement : document.body;
+  const $scroll = 'scrollingElement' in document ? document.scrollingElement : document.body;
 
   beforeEach(() => {
     const div = document.createElement('div');

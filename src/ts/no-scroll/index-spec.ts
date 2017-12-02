@@ -5,7 +5,7 @@ import { fixScroll, releaseScroll } from './index';
 describe("no-scroll",  () => {
 
   const $body = document.body;
-  const $scroll = navigator.userAgent.indexOf('WebKit') < 0 ? document.documentElement : document.body;
+  const $scroll = 'scrollingElement' in document ? document.scrollingElement : document.body;
   beforeEach(() => {
     const div = document.createElement('div');
     div.innerHTML = '<div style="height: 9999px;">test</div>';
